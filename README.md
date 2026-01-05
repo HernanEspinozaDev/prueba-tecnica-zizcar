@@ -158,7 +158,7 @@ Este proyecto asume una configuración local estándar (en este caso se uso con 
 
 1.  Abre tu cliente SQL favorito (ej: **HeidiSQL**, **DBeaver**).
 2.  Crea una nueva base de datos llamada `zizcar_db`.
-3.  Asegúrate de tener un usuario con los siguientes accesos (o modifica el `.env` del backend):
+3.  Asegúrate de tener un usuario con los siguientes accesos en backend\src\app.module.ts o modificalo según tu base de datos(estos datos son de prueba, en produción asegurate de ponerlo en .env):
     *   **Usuario:** `root`
     *   **Contraseña:** `Admin12345`
 
@@ -242,7 +242,23 @@ Con el backend corriendo, accede a la documentación interactiva para probar los
 
 ---
 
+## � Dashboard de Negocios (PowerBI)
+
+Se ha desarrollado un tablero interactivo para el análisis financiero.
+
+**Características:**
+1.  **Conexión Directa:** Consume datos en tiempo real desde MySQL.
+2.  **Visualizaciones:** Análisis de tendencias, distribución por categorías y KPIs totales.
+3.  **Archivo Fuente:** El proyecto incluye el archivo editable en [DashboardPowerBI.pbix](.DashboardPowerBI.pbix).
+
+![Dashboard PowerBI](./assets/DashboardPowerBI.webp)
+
+---
+
 ## 📷 Visualización
+
+### Login de Usuario
+![Login Screen](./assets/login.webp)
 
 ### Dashboard Principal
 ![Dashboard con Datos](./assets/zizcardashboard.webp)
