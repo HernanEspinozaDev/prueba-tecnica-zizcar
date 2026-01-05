@@ -18,4 +18,9 @@ import { RouterView } from 'vue-router'
 body {
   font-family: 'Roboto', sans-serif;
 }
+
+/* Filtro para volver blanco el logo en la barra de navegación (que tiene fondo verde) */
+.filter-white {
+    filter: brightness(0) invert(1);
+}
 </style>

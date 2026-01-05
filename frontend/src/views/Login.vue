@@ -41,37 +41,46 @@ const handleLogin = async () => {
 </script>
 
 <template>
-  <v-container class="fill-height bg-deep-purple-accent-4" fluid>
+  <v-container class="fill-height login-background" fluid>
     <v-row align="center" justify="center">
       <v-col cols="12" sm="8" md="4">
+        <!-- Logo Corporativo -->
+        <div class="text-center mb-10">
+            <v-img src="/logo-zizcar2.webp" max-height="150" contain class="mx-auto filter-drop-shadow"></v-img>
+        </div>
+
         <!-- Tarjeta de Login -->
-        <v-card class="elevation-12 rounded-lg">
-          <v-toolbar color="primary" dark flat>
-            <v-toolbar-title>Zizcar Login</v-toolbar-title>
-          </v-toolbar>
-          <v-card-text>
+        <v-card class="elevation-8 rounded-xl">
+          <v-card-text class="pa-8">
             <v-form @submit.prevent="handleLogin">
               <v-text-field
                 v-model="username"
-                label="Email"
+                label="Email Corporativo"
                 name="username"
-                prepend-icon="mdi-email"
+                prepend-inner-icon="mdi-email"
                 type="email"
                 variant="outlined"
+                color="primary"
+                density="comfortable"
+                class="mb-4"
               ></v-text-field>
 
               <v-text-field
                 v-model="password"
                 label="Contraseña"
                 name="password"
-                prepend-icon="mdi-lock"
+                prepend-inner-icon="mdi-lock"
                 type="password"
                 variant="outlined"
+                color="primary"
+                density="comfortable"
               ></v-text-field>
               
-              <v-alert v-if="error" type="error" class="mb-4" density="compact">{{ error }}</v-alert>
+              <v-alert v-if="error" type="error" class="mb-4" density="compact" variant="tonal">{{ error }}</v-alert>
 
-              <v-btn type="submit" color="primary" block size="large" :loading="loading">Ingresar</v-btn>
+              <v-btn type="submit" color="primary" block size="large" class="mt-6 text-none font-weight-bold rounded-lg" :loading="loading" elevation="4">
+                Iniciar Sesión
+              </v-btn>
             </v-form>
           </v-card-text>
         </v-card>
@@ -79,3 +88,16 @@ const handleLogin = async () => {
     </v-row>
   </v-container>
 </template>
+
+<style scoped>
+.login-background {
+  /* Fondo Verde Claro "Tipo Crema" que permite ver letras blancas.
+     Usamos un verde suave pero con suficiente saturación. */
+  background-color: #81C784; 
+  background: linear-gradient(135deg, #A5D6A7 0%, #66BB6A 100%);
+}
+
+.filter-drop-shadow {
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
+}
+</style>

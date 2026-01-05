@@ -32,7 +32,11 @@ const logout = () => {
         <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
       </template>
 
-      <v-app-bar-title>Zizcar Records</v-app-bar-title>
+      <v-app-bar-title>
+          <div class="d-flex align-center">
+              <v-img src="/logo-zizcar2.webp" max-height="32" max-width="120" contain class="mr-2 filter-white"></v-img>
+          </div>
+      </v-app-bar-title>
 
       <template v-slot:append>
          <span class="mr-4 text-caption">{{ authStore.user?.email || authStore.user?.username || 'User' }}</span>
